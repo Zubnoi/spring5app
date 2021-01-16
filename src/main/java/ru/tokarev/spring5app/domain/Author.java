@@ -1,7 +1,7 @@
 package ru.tokarev.spring5app.domain;
 
 import javax.persistence.*;
-import java.util.Objects;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -14,15 +14,14 @@ public class Author {
     private String name;
     private String lastname;
 
-    @ManyToMany(mappedBy = "author")
-    private Set<Book> books;
+    @ManyToMany(mappedBy = "authors")
+    private Set<Book> books = new HashSet<>();
 
     public Author() {}
 
-    public Author(String name, String lastname, Set<Book> books) {
+    public Author(String name, String lastname) {
         this.name = name;
         this.lastname = lastname;
-        this.books = books;
     }
 
     public Long getId() {
