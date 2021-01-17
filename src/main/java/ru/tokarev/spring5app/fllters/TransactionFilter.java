@@ -12,7 +12,6 @@ import java.io.IOException;
  * @author Andrey Tokarev on 17.01.2021
  * @project spring5app
  */
-
 @Component
 @Order(1)
 public class TransactionFilter implements Filter {
